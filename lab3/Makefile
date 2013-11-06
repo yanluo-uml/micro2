@@ -13,6 +13,6 @@ clean:
 # kernel build system and can use its language.
 else
  
-    obj-m := pp_adc.o 
+    obj-m := pp_adc.o chardev.o
  
 endif
