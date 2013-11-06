@@ -1,0 +1,4 @@
+
+#!/bin/bash
+. device
+echo "disable" > $DEVICE 

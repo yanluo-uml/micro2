@@ -1,0 +1,4 @@
+
+#!/bin/bash
+. device
+echo "between $1 $2" > $DEVICE 
