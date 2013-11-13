@@ -1,0 +1,44 @@
+Notes on Serial Port Based Lab 3
+
+For students who chose to use serial port as your communication
+interface with the Atom board (or PC) in Lab 2, please note that your
+Lab 3 may be different from the rest of the class. Two options are
+described as follows.
+
+===Option 1===
+
+If you used inb() and outb() to implement the serial communication
+functionalities in Lab 2 on the embedded computer side, you can follow
+the similar approach as illustrated in the "pp_adc.c" skeleton
+code. Make sure you replace the parport related code with your code to
+manipulate serial comm. ports (e.g. COM1 at 0x3F8). The two
+links at [2][3] show you some examples.
+
+===Option 2===
+
+ If you used /dev/ttyS0 (or /dev/ttyUSB0) in your Lab 2, you will
+need to write a char driver device to implement a "pipe" that connects
+to your PIC based sensor. Assume the name of your actual device file
+is "/dev/mypipe", you will have the following information flow
+
+(user application) <-> /dev/mypipe <-> "glue" <-> /dev/ttyUSB0 <->
+PIC.
+
+where "glue" is a user space program that opens both "/dev/mypipe" and
+"/dev/ttyUSB0" to relay data/commands back and forth. You will need to
+design "glue". Your mypipe device must support select/poll, i.e. you
+will need wait_queue to put a process to sleep and later wake it up,
+as illustrated in the example pp_adc.c. 
+
+You may use "/dev/mypipe0" and "/dev/mypipe1" to handle one-way data
+flow, instead of a single "/dev/mypipe" to handle two-way relay. 
+
+Chapter 3 Char Drivers is a good read available at [1].
+
+
+=== REFERENCE===
+
+[1] Linux Device Driver, 3rd Ed. http://lwn.net/Kernel/LDD3/
+[2] http://www.freesoftwaremagazine.com/articles/drivers_linux
+[3] http://www.makelinux.net/ldd3/chp-9-sect-2
+ 
