@@ -17,23 +17,25 @@ links at [2][3] show you some examples.
 ===Option 2===
 
  If you used /dev/ttyS0 (or /dev/ttyUSB0) in your Lab 2, you will
-need to write a char driver device to implement a "pipe" that connects
-to your PIC based sensor. Assume the name of your actual device file
-is "/dev/mypipe", you will have the following information flow
+need to write a char driver device to implement a "pipe" device that 
+connects to your PIC based sensor. Assuming the name of your actual 
+device file is "/dev/mypipe", you will have the following information 
+flow:
 
-(user application) <-> /dev/mypipe <-> "glue" <-> /dev/ttyUSB0 <->
+(user application) <-> /dev/mypipe <-> "glue" <-> /dev/ttyS0 <->
 PIC.
 
 where "glue" is a user space program that opens both "/dev/mypipe" and
 "/dev/ttyUSB0" to relay data/commands back and forth. You will need to
 design "glue". Your mypipe device must support select/poll, i.e. you
-will need wait_queue to put a process to sleep and later wake it up,
-as illustrated in the example pp_adc.c. 
+will need a wait_queue or the like to put a process to sleep and later 
+wake it up, as illustrated in the example pp_adc.c. 
 
 You may use "/dev/mypipe0" and "/dev/mypipe1" to handle one-way data
 flow, instead of a single "/dev/mypipe" to handle two-way relay. 
 
-Chapter 3 Char Drivers is a good read available at [1].
+Chapter 3 "Char Drivers" and Chapter 6 "Advanced Char Driver Operations" 
+are good reads available at [1].
 
 
 === REFERENCE===
