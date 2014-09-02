@@ -9,6 +9,7 @@ PV = "0.1"
 
 SRC_URI = "file://Makefile \
            file://picsensor.c \
+           file://picsensor.h \
            file://COPYING \
           "
 
