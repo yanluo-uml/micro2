@@ -1,5 +1,0 @@
-#!/bin/bash
-. device
-read line < $DEVICE
-
-echo $line

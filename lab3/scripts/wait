@@ -1,5 +1,0 @@
-
-#!/bin/bash
-. device
-#echo "wait $1" > $DEVICE 
-./poll $DEVICE $1
