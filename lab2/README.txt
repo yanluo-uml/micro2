@@ -13,6 +13,8 @@ galileo-sd-image.tar.gz   -  image files of Yocto Linux for Galileo
 README.txt                -  this file
 lab2.pdf                  -  Lab assignment two
 Galileo_Linux_IO.png      -  Intel Galileo GPIO Pin Connection Diagram (src:Sergey Blog)
+sample-gpio-galileo.c     -  GPIO sample for Linux on Galileo
+sample-pic.c              -  Sample code for PIC, for customized bus protocol (Lab 2)
 
 
 ==  Instruction of Preparing a Bootable SD card
