@@ -70,4 +70,8 @@ To start, you can refer to the following link to understand the command line
 operation of GPIO pins
 http://www.malinov.com/Home/sergey-s-blog/intelgalileo-programminggpiofromlinux
 
+Then here is a good example of C program for GPIO on Rasberry Pi
+http://elinux.org/RPi_Low-level_peripherals
+
+
 
