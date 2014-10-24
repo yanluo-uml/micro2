@@ -32,6 +32,8 @@ for free. Then use the following commands to set up on your Linux machine.
   git config --global user.email "you@example.com"
   git config --global user.name "Your Name"
 
+(d) run "sudo apt-get update" to make sure your package manager is up to date.
+
 1. Download Intel Quark BSP files
 
 Here is the link to download the necessary files.
@@ -66,7 +68,23 @@ Follow the instructions described in patches.txt to continue building the Yocto 
 *NOTE* that you only need to build the kernel images. Ignore the steps for building "EDKII"
 and "flash image (SPI)".
 
-4. Build a kernel module
+4. If you encounter build errors in the previous step, you need to do the following:
+
+(1) locate file named "meta-clanton-distro/recipes-core/images/image-full-galileo.bb"
+
+(2) remove package names (opencv, python-numpy, python-opencv) from the above file
+
+5. Build the kernel with useful development tools
+
+(1) locate file named "meta-clanton-distro/recipes-core/images/image-full-galileo.bb"
+
+(2) add the following lines into the above file
+   IMAGE_FEATURES += "package-management dev-pkgs"
+   IMAGE_INSTALL += "autoconf automake binutils binutils-symlinks cpp cpp-symlinks gcc gcc-symlinks g++ g++=symlinks gettext make libstdc++ libstdc++-dev file coreutils python-dev git i2c-tools"
+
+(3) refer to the steps in Step 3 to rebuild the kernel.
+
+6. Build a kernel module
 
 (1) Copy the kernel module (hello) source code to meta directory
    cp -r hello-mod <WORKDIR>/meta-clanton_v1.0.1/poky/meta-skeleton/recipes-kernel
@@ -85,10 +103,10 @@ and "flash image (SPI)".
 does not change. The kernel modele (.ko) will be bundled into the ramfs and ext3 
 file system image.
 
-5. Boot Linux on Galileo using your new kernel and file system image. You will need to
+7. Boot Linux on Galileo using your new kernel and file system image. You will need to
 update your MicroSD card with the new images.
 
-6. Test your kernel module after the Linux boots:
+8. Test your kernel module after the Linux boots:
    insmod hello-mod
    lsmod
    dmesg
