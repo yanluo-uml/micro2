@@ -22,8 +22,14 @@ Galileo_Linux_IO.png      -  Intel Galileo GPIO Pin Connection Diagram (src:Serg
 (a) you need a Linux machine that runs Ubuntu 12.04. The following steps
 are tested on 12.04. You may try them on other Linux distributions, but 
 chances are you will need additional steps.
+
 (b) You can use VirtualBox (windows/mac) to install Ubuntu 12.04 or
-use an Amazon EC2 free tier instance (FIXME-URL)
+use an Amazon EC2 free tier instance (http://http://aws.amazon.com/ec2/)
+
+(c) You need to have a github account. You can register one at github.com
+for free. Then use the following commands to set up on your Linux machine.
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
 
 1. Download Intel Quark BSP files
 
