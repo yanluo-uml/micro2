@@ -12,6 +12,7 @@ In this repository, the following files are provided
 
 README.txt                -  this file
 lab3.pdf                  -  Lab assignment three
+hello-mod/                -  Linux kernel module example (helloworld)
 Galileo_Linux_IO.png      -  Intel Galileo GPIO Pin Connection Diagram (src:Sergey Blog)
 
 
@@ -61,11 +62,36 @@ files:
    patches.txt
 
 Follow the instructions described in patches.txt to continue building the Yocto kernel.
-Note that you only need to build the kernel images. Ignore the steps for building "EDKII"
+
+*NOTE* that you only need to build the kernel images. Ignore the steps for building "EDKII"
 and "flash image (SPI)".
 
-4. Build a kernel module.
-TODO:
+4. Build a kernel module
+
+(1) Copy the kernel module (hello) source code to meta directory
+   cp -r hello-mod <WORKDIR>/meta-clanton_v1.0.1/poky/meta-skeleton/recipes-kernel
+   Add your group name into the hello.c. You can change the message "Hello World!"
+   to "Hello From <YOUR GROUP NAME>".
+
+(2) add the following line to the end of meta-clanton-bsp/conf/machine/clanton.conf
+   MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "hello-mod"
+
+(3) run the build process again. 
+   ./setup.sh
+   source poky/oe-init-build-env yocto_build
+   bitbake image-full-galileo
+
+*NOTE* Only the new module (hello-mod) will be built this time as your Linux kernel 
+does not change. The kernel modele (.ko) will be bundled into the ramfs and ext3 
+file system image.
+
+5. Boot Linux on Galileo using your new kernel and file system image. You will need to
+update your MicroSD card with the new images.
+
+6. Test your kernel module after the Linux boots:
+   insmod hello-mod
+   lsmod
+   dmesg
 
 == Programming of I2C on Linux
 
