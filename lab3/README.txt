@@ -70,7 +70,7 @@ and "flash image (SPI)".
 
 4. If you encounter build errors in the previous step, you need to do the following:
 
-(1) locate file named "meta-clanton-distro/recipes-core/images/image-full-galileo.bb"
+(1) locate file named "meta-clanton-distro/recipes-core/images/image-full.bb"
 
 (2) remove package names (opencv, python-numpy, python-opencv) from the above file
 
