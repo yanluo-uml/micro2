@@ -92,7 +92,8 @@ and "flash image (SPI)".
    to "Hello From <YOUR GROUP NAME>".
 
 (2) add the following line to the end of meta-clanton-bsp/conf/machine/clanton.conf
-   MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "hello-mod"
+   MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "kernel-module-hello-mod"
+   [IMPORTANT] Where the value is derived by appending the module filename without the .ko extension to the string "kernel-module-".
 
 (3) run the build process again. 
    ./setup.sh

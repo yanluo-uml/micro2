@@ -21,7 +21,7 @@
 
 int init_module(void)
 {
-	printk("Hello World!\n");
+	printk("Hello World! This is Peilong!\n");
 	return 0;
 }
 
