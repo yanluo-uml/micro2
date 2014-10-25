@@ -86,14 +86,13 @@ and "flash image (SPI)".
 
 6. Build a kernel module
 
-(1) Copy the kernel module (hello) source code to meta directory
-   cp -r hello-mod <WORKDIR>/meta-clanton_v1.0.1/poky/meta-skeleton/recipes-kernel
+(1) Copy the kernel module (hello-mod) source code to kernel recipes directory
+   cp -r hello-mod <WORKDIR>/meta-clanton_v1.0.1/meta-clanton-bsp/recipes-kernel
    Add your group name into the hello.c. You can change the message "Hello World!"
    to "Hello From <YOUR GROUP NAME>".
 
 (2) add the following line to the end of meta-clanton-bsp/conf/machine/clanton.conf
-   MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "kernel-module-hello-mod"
-   [IMPORTANT] Where the value is derived by appending the module filename without the .ko extension to the string "kernel-module-".
+   MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "hello-mod"
 
 (3) run the build process again. 
    ./setup.sh
@@ -116,7 +115,9 @@ update your MicroSD card with the new images.
 
 (1) configure GPIO pins
 
+See lab3.pdf
 
-(2) I2C programming
+(2) I2C programming with Linux APIs and libraries.
 
+See lab3.pdf
 
