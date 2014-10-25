@@ -116,6 +116,9 @@ update your MicroSD card with the new images.
 (4) Now execute "lsmod | grep hello"
    You will see the device informcation such as:
    hello 12394 0 - Live 0xd2776000 (O)
+(5) Remove your created kernel module, execute:
+   # rmmod hello.ko
+   You will see the printout of the device information
 
 == Programming of I2C on Linux
 
