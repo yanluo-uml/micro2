@@ -80,7 +80,7 @@ and "flash image (SPI)".
 
 (2) add the following lines into the above file
    IMAGE_FEATURES += "package-management dev-pkgs"
-   IMAGE_INSTALL += "autoconf automake binutils binutils-symlinks cpp cpp-symlinks gcc gcc-symlinks g++ g++=symlinks gettext make libstdc++ libstdc++-dev file coreutils python-dev git i2c-tools"
+   IMAGE_INSTALL += "autoconf automake binutils binutils-symlinks cpp cpp-symlinks gcc gcc-symlinks g++ g++-symlinks gettext make libstdc++ libstdc++-dev file coreutils python-dev git i2c-tools"
 
 (3) refer to the steps in Step 3 to rebuild the kernel.
 
