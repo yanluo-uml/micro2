@@ -95,7 +95,6 @@ and "flash image (SPI)".
    MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "hello-mod"
 
 (3) run the build process again. 
-   ./setup.sh
    source poky/oe-init-build-env yocto_build
    bitbake image-full-galileo
 
@@ -107,9 +106,16 @@ file system image.
 update your MicroSD card with the new images.
 
 8. Test your kernel module after the Linux boots:
-   insmod hello-mod
-   lsmod
-   dmesg
+(1) In your Yocto Linux, go to directory:
+   # cd /lib/modules/3.8.7-yocto-standard/extra   
+(2) Execute "ls"
+   You will see the "hello.ko" kernel module
+(3) Insert the kernel module to your system:
+   # insmod hello.ko
+   I will see the printout of the device information
+(4) Now execute "lsmod | grep hello"
+   You will see the device informcation such as:
+   hello 12394 0 - Live 0xd2776000 (O)
 
 == Programming of I2C on Linux
 
