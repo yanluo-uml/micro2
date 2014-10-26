@@ -112,9 +112,9 @@ update your MicroSD card with the new images.
    You will see the "hello.ko" kernel module
 (3) Insert the kernel module to your system:
    # insmod hello.ko
-   I will see the printout of the device information
+   You will see the printout of the device information
 (4) Now execute "lsmod | grep hello"
-   You will see the device informcation such as:
+   You will see the device information similar to:
    hello 12394 0 - Live 0xd2776000 (O)
 (5) Remove your created kernel module, execute:
    # rmmod hello.ko
