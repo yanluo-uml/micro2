@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/repos/pic-sensor/!svn/ver/7/http/client
+END
+test.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/repos/pic-sensor/!svn/ver/7/http/client/test.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/repos/pic-sensor/!svn/ver/7/http/client/Makefile
+END
