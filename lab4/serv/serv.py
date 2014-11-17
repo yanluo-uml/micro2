@@ -14,9 +14,9 @@ import datetime
 from authfile import VerifyGroup
 
 class GroupEntry:
-	def __init__(self, ID=0, name="", status="", data=""):
+	def __init__(self, ID=0, name="", status="", data="", timestamp=""):
 		maxlen=100
-		print(str(ID)+": \""+name+"\"\t"+data+"\t\""+status+"\"")
+		print(str(ID)+": \""+name+"\"\t"+data+"\t\""+status+"\"\t\""+timestamp+"\"")
 		self.ID=ID
 		self.name=cgi.escape(name)[0:maxlen]
 		self.status=cgi.escape(status)[0:maxlen]
@@ -29,7 +29,7 @@ class GroupEntry:
 				"<td class=\"thinborder\">" + str(self.name) + "</td>" +
 				"<td class=\"thinborder\">" + str(self.data) + "</td>" +
 				"<td class=\"thinborder\">" + str(self.status) + "</td>" +
-				"<td class=\"thinborder\">" + str(self.timestamp) +"</td>"+ "</tr>")
+				"<td class=\"thinborder\">" + str(self.date) +"</td>"+ "</tr>")
 				#"<td class=\"thinborder\">" + str(self.date.strftime("%m/%d/%Y at %I:%M %P")) +"</td>"+ "</tr>")
 
 groupdata={}
@@ -64,7 +64,7 @@ def ParseQuery(query):
 def ParseQuery_AddGroup(query):
 	# Throws exception at any sign of failure (unparsable URL query, incorrect parameters, incorrect credentials)
 	params=ParseQuery(query)
-	g=GroupEntry(params['id'],params['name'],params['status'],params['data'])
+	g=GroupEntry(params['id'],params['name'],params['status'],params['data'],params['timestamp'])
 	if(VerifyGroup(int(params['id']),params['password'])):
 		groupdata[g.ID]=g
 	else:
