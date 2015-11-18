@@ -17,6 +17,7 @@ Galileo_Linux_IO.png      -  Intel Galileo GPIO Pin Connection Diagram (src:Serg
 
 
 == Instruction of Building a Yocto Linux kernl image and file system image
+== For BSP version 1.0.1
 
 0. Prepare your build environment
 
