@@ -49,7 +49,7 @@ for free. Then use the following commands to set up on your Linux machine.
 5.  Install Dependencies:
 
     >sudo apt-get install build-essential gcc-multilib vim-common \
-    patchutils git diffstat texinfo gawk chrpath file
+    patchutils git diffstat texinfo gawk chrpath file libsdl1.2-dev
 
 6.  Extract Board_Support_Package_Sources_for_Intel_Quark_v1.2.0.7z to your home directory.
 
