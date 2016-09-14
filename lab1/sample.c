@@ -1,15 +1,15 @@
-imple PIC program example
+/*
  * for UMass Lowell 16.480/552
  * 
- * Author: Roy
+ * Author: Ioannis Smanis
  *
- * Created on 2014/9/5
+ * Created on 2016/9/7
  *
- * Reference: Start from PIC16F688 Data Sheet Page 67
+ * Reference: Start from PIC16F18857
  */
 
 
-#include <pic16f688.h>
+#include <pic16f18857.h>
 
 //initialize ADC
 void adc_init()
