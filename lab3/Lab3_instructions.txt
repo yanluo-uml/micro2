@@ -1,0 +1,113 @@
+
+Micro2  - LAB 3  Instructions and Materials:
+
+
+NOTE: All the required hardware components are provided by the TA of Micro2 Ioannis Smanis
+Materials for lab 3:  for Undergrad students: 1x Temperature sensor , for Graduate Students: 1x Temperature sensor  and 1x Gesture sensor, for all Students : 1x Galileo wi-fi cards , 2x Wi-Fi antennas, 1x Usb Web camera
+
+
+---------  Device Characteristics:
+
+Temperature sensor :  Texas Instruments TMP102 
+Power Supply: 3.3V MAX (Please do not exceed this limit)
+Interface: I2C  (3.3V tolerance)
+Device Address:  (Default Address 0x48) If you connect the ADD0 pin to any GPIO on Galileo and set it High (3.3V) the address changes to 0x49
+
+PIN OUT:
+SDA: I2C Data  Line  (3.3V tolerance)
+SCL: I2C Clock Line  (3.3V tolerance)
+VCC: 3.3V
+GND: Ground
+INT: Interrupt
+VL : Optional Power to IR LED (3.3V tolerance) - Recommendation: Keep it Unconnected
+
+Hooking up Temperature Sensor on Galileo Board: there is no need for extra resistors on the I2C lines 
+For your Interest : This sensor is used for Samsung Galaxy S5 in order to support all the smart scroll/swipe gestures 
+
+
+Gesture Sensor : Avago Technologies  APDS-9960
+Power Supply: 3.3V MAX (Please do not exceed this limit)
+Interface: I2C  (3.3V tolerance)
+Device Address: 0x39
+
+PIN OUT:
+SDA: I2C Data  Line  (3.3V tolerance)
+SCL: I2C Clock Line  (3.3V tolerance)
+VCC: 3.3V
+GND: Ground
+
+Gesture detection range of 4 to 8 inches (10 to 20 cm).
+
+Hooking up Gesture Sensor on Galileo Board: there is no need for extra resistors on the I2C lines 
+
+
+
+
+--------  USBtoUART cable:
+
+Interface: UART
+
+Pin Out:
+Green  Wire: RTS (3.3V tolerance)
+Yellow Wire: RX Data Line (3.3V tolerance)
+Orange Wire: TX Data Line (3.3V tolerance)
+Red    Wire: 5V   
+Brown  Wire: CTS (3.3V tolerance)
+Black  Wire: Ground
+
+
+-------- USB 2.0  Camera 
+-------- PCI-Express Galileo WiFi Card + 2 Antennas
+
+
+
+
+——————  Use the latest Yocto Linux image file
+
+Download: Latest yocto image file from source  https://software.intel.com/en-us/iot/hardware/galileo/downloads
+
+Make Bootable SD card and restore the image file in the card:   https://software.intel.com/en-us/get-started-galileo-linux-step1
+
+Instructions: accessing the root path of the SD card using the new Yocto image you need to browse to this path:  “/media/card”  
+
+
+
+
+
+———————- Putting the Galileo to the Network : Wi-Fi card / Ethernet Port
+
+Step 1. Install the wi-fi hardware on the PCI-express socket on the back of the Intel Galileo Gen2 board
+Step 2.a to connect to the Wi-Fi network see the given guide "Galieo_Wifi_Connection.pdf"
+step 2.b You can use the ethernet port of Galileo board and your laptop ethernet port in order to use wired connection
+      step 2.b.1 : for windows computers : download the software from here http://www.dhcpserver.de/cms/
+      step 2.b.2 : follow the readme.TXT file to install the DHCP server software
+      step 2.b.3 : get an ethernet cable and connect the Galileo board to the ethernet port of your windows computer
+      step 2.b.4 : when you are done , you can use an SSH client to connect to the Galileo board without the need of the USB-to-Serial cable anymore. (If you are experiencing Galileo password issues connecting your SSH client with the Galileo , use generic linux commands to set a super user password to your board , and try your SSH client again)
+step 3. If you are using wi-fi to connect the board to the network , you still can use SSH protocol to connect your computer to the Galileo board (UNIX OS computers can already use ssh command to connect without additional software. For windows users use Putty as an SSH client)
+
+Useful link on that topic: http://www.hofrock.com
+
+
+
+
+
+———————-  Using the web camera 
+
+Useful resources: 
+http://www.instructables.com/id/Galileo-Monochrome-Webcam-Display-System/?ALLSTEPS
+https://communities.intel.com/thread/54923  
+https://communities.intel.com/thread/56024
+http://i-am-gabi.github.io/take-a-picture-opencv-galileo  (useful for debugging your camera)
+
+NOTE: You need to use OpenCV software module in order to handle the camera which is embedded in the new yocto image
+
+step 1. boot your yocto OS on your Galileo board 
+step 2. connect your given web camera to the USB Host port on the Galileo
+step 3. use ssh client via network or USB-to-Serial cable to manage your Galileo board
+step 4. check if your camera is connected to your Galileo board: browse to the "/dev" directory and type "ls" to see the device list of your board. You should see a device called "video0"
+step 5. develop your own .cpp file (C++ code) for taking pictures and video using the web camera and the given I2C Sensor device (Temperature or Gesture sensor) as the trigger for the camera. Be creative and make your own scenario to trigger your camera using the given sensor.
+
+———————- 
+
+
+
