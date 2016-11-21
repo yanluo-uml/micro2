@@ -13,7 +13,7 @@ groups[5]="password"
 groups[6]="password"
 
 def VerifyGroup(ID, password):
-	return groups[ID]==password
+	return groups[ID]== password
 
 
 
