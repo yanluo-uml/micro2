@@ -16,11 +16,13 @@
 #include <unistd.h>
 #include <string.h>
 
-#define Strobe     (26) // IO8
-#define GP_4       (28) // IO4
-#define GP_5	   (17) // IO5
-#define GP_6	   (24) // IO6
-#define GP_7	   (27) // IO7
+    //Linux GPIO number // Aruino Shield Pin Name
+
+#define Strobe     (40) // 8
+#define GP_4       (48) // A0
+#define GP_5	   (50) // A1
+#define GP_6	   (52) // A2
+#define GP_7	   (54) // A3
 #define GPIO_DIRECTION_IN      (1)  
 #define GPIO_DIRECTION_OUT     (0)
 #define ERROR                  (-1)
@@ -28,15 +30,15 @@
 //open GPIO and set the direction
 int openGPIO(int gpio, int direction )
 {
-        1.set the GPIO
-        2.set the direction          
-        3.set the voltage
+     //   1.set the GPIO
+    //    2.set the direction
+    //    3.set the voltage
 }
 
 //write value
 int writeGPIO(...)
 {
-        ...
+    //    ...
 }
 
 //main
