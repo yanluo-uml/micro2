@@ -18,7 +18,7 @@
    D3       RC5
  */
 
-#include <pic16f688.h>
+#include <pic16f18857.h>
 
 void set_receive()
 {
