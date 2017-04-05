@@ -1,0 +1,10 @@
+<html>
+	<head>
+		<title>You are a failure.</title>
+		<link href="fashion.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		Failed to submit data.<br />
+		Were your group credentials correct? Was the HTTP request formatted in the same way as <a href="/example.html">example.html</a>?
+	</body>
+</html>

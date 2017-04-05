@@ -1,0 +1,17 @@
+BODY{
+	font:menu;
+	background-color: #aaaaaa;
+}
+TABLE{
+	font:menu;
+	background-color: #66aaff;
+	border-style: outset;
+	border-width: medium;
+	border-color: #66aaff;
+}
+.thinborder{
+	text-align:center;
+	border-style: solid;
+	border-width: thin; 
+	border-color: black;
+}
