@@ -1,0 +1,25 @@
+
+---- Generic circuit instructions
+
+Your PIC hardware application should work with Vcc/Vdd = 3.3 Volt (NOT 5 Volt) - This is MANDATORY
+Make sure your power supply has a 3.3V output in order to supply your circuit
+
+
+--- How to use an FTDI cable 
+
+
+Sources: https://www.sparkfun.com/products/9717
+(guides and driver links are included)
+
+Be careful , the provided FTDI cable has 
+
+Vcc = 5V  
+
+The rest of I/O pins are 3.3V tollerant (TXD and RXD )
+
+
+-------- Be careful ------------
+If you want to use your FTDI cable to Power your circuit you should make a voltage regulation circuuit to convert the 5 Volt to 3.3 Volt 
+Otherwise you will possibly fry the I/Os pins of the FTDI cable 
+If you are not sure about it ask for advice from TA Ioannis Smanis
+--------------------------------
