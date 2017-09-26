@@ -1,0 +1,78 @@
+——————  Use the latest Yocto Linux image file
+
+Download: Latest yocto image file from source  https://downloadcenter.intel.com/download/26418/Intel-Galileo-Board-Support-Package and download the file: Galileo_Poky_SW_image_20160606.zip
+
+Make Bootable SD card and restore the image file in the card:   https://software.intel.com/en-us/get-started-galileo-linux-step1
+
+Instructions: accessing the root path of the SD card using the new Yocto image you need to browse to this path:  “/media/card”  
+
+
+
+
+———————  Use the USB (OTG) port to transfer your C code or other materials from your computer to your Galileo board. (exchange files between Intel Galileo board and your PC via a FAT32 Formatted Flash drive) ——
+
+mount / unmount usb drives on Galileo manually:  http://askubuntu.com/questions/37767/how-to-access-a-usb-flash-drive-from-the-terminal-how-can-i-mount-a-flash-driv
+
+
+
+
+———————- Putting the Galileo to the Network : Wi-Fi card / Ethernet Port ——
+
+Step 1. Install the wi-fi hardware on the PCI-express socket on the back of the Intel Galileo Gen2 board  (Very gently connect the white and the black antenna-wires on the WiFi card)
+Step 2. to connect to the Wi-Fi network see the given guide "Galieo_Wifi_Connection.pdf"
+Step 3. when you are done , you can use an SSH client to connect to the Galileo board without the need of the USB-to-Serial cable anymore. (If you are experiencing Galileo password issues connecting your SSH client with the Galileo , use generic linux commands to set a super user password to your board , and try your SSH client again)
+step 4. If you are using wi-fi to connect the board to the network , you still can use SSH protocol to connect your computer to the Galileo board (UNIX OS computers can already use ssh command to connect without additional software. For windows users use Putty as an SSH client)
+
+Useful link on that topic: http://www.hofrock.com
+
+Connecting Galileo on Eduroam  wifi :  edit  “eduroam.config”  file applying your credentials  (school email and school password) and save it , then store this file in “/var/lib/connman/“ Galileo’s directory
+
+
+
+
+
+————————  Galileo Gen 2 : GPIO Configuration example: ———————————
+
+
+
+Set Strobe Signal Example:
+echo 40  > /sys/class/gpio/unexport      // unset the used GPIO port
+
+
+set a GPIO:
+echo 40  > /sys/class/gpio/export                   // set a GPIO
+
+echo out > /sys/class/gpio/gpio40/direction         // direction
+
+echo 1  > /sys/class/gpio/gpio40/value              // value HIGH (3.3V)
+
+
+
+Recommended functions to get and store data in the GPIOs 
+sprintf();
+system();
+
+
+C example:    sprintf(buffer, "echo \"%d\" >/sys/class/gpio/export", gpio);
+	      system(buffer);
+
+
+
+
+————  Use sample-pic.c file in addition with the Lab 1 given sample Project. 
+
+1. Import a new copy of Lab1 project to the MPLABX
+2. Deleter the main.c code from the imported project
+3. copy the code from sample-pic.c and paste it in the main.c 
+
+
+
+
+—— Useful get started guides for Intel Galileo 
+
+ https://software.intel.com/en-us/get-started-galileo-windows
+ https://www.sparkfun.com/products/retired/13096
+
+
+
+
