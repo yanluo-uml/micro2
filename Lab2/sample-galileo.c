@@ -28,6 +28,12 @@
 #define GPIO_DIRECTION_OUT     (0)
 #define ERROR                  (-1)
 
+void initGPIO(){
+    
+    
+    
+}
+
 //open GPIO and set the direction
 int openGPIO(int gpio, int direction )
 {
@@ -35,6 +41,8 @@ int openGPIO(int gpio, int direction )
     //    2.set the direction
     //    3.set the voltage
 }
+
+
 
 //write value
 int writeGPIO(...)
@@ -55,6 +63,7 @@ int main(void)
         fileHandleGPIO_5 = openGPIO(GP_5, GPIO_DIRECTION_OUT);
         fileHandleGPIO_6 = openGPIO(GP_6, GPIO_DIRECTION_OUT);
         fileHandleGPIO_7 = openGPIO(GP_7, GPIO_DIRECTION_OUT);
+    
 	    fileHandleGPIO_S = openGPIO(Strobe, GPIO_DIRECTION_OUT);
        
         while(1)

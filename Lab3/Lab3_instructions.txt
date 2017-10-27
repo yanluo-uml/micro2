@@ -1,0 +1,91 @@
+
+Micro2  - LAB 3  Instructions and Materials:
+
+
+NOTE: All the required hardware components are provided by the TA of Micro2 Ioannis Smanis
+
+Required Materials for lab 3: 
+ 1x Temperature sensor (for Undergrad teams)
+ 1x Gesture Sensor (for Grad teams)
+ 1x Galileo Board + wi-fi cards 
+ 2x Wi-Fi antennas 
+ 1x Usb Web camera
+ 1x FTDI Cable 
+
+
+---------  Device Characteristics:
+*********************************************
+Temperature sensor : Texas Instruments TMP102 
+Power Supply: 3.3V MAX (Please do not exceed this limit)
+Interface: I2C  (3.3V tolerance)
+Device Address:  (Default Address 0x48) To change the default I2C address use the instructions included in the schematics
+
+PIN OUT:
+SDA: I2C Data  Line  (3.3V tolerance)
+SCL: I2C Clock Line  (3.3V tolerance)
+VCC: 3.3V
+GND: Ground
+
+Hooking up Temperature Sensor on Galileo Board: there is no need for pull-up resistors on the I2C lines 
+For your Interest : This sensor is used for Samsung Galaxy S5 in order to support all the smart scroll/swipe gestures 
+
+check details and materials at:  https://www.sparkfun.com/products/13314
+
+
+***********************************************
+Gesture Sensor :  Avago Technologies  APDS-9960 
+Power Supply: 3.3V MAX (Please do not exceed this limit)
+Interface: I2C  (3.3V tolerance)
+Device Address: 0x39
+
+PIN OUT:
+SDA: I2C Data  Line  (3.3V tolerance)
+SCL: I2C Clock Line  (3.3V tolerance)
+VCC: 3.3V
+GND: Ground
+INT: Interrupt
+VL : Optional Power to IR LED (3.3V tolerance) - Recommendation: Keep it Unconnected
+
+Hooking up Gesture Sensor on Galileo Board: there is no need for pull-up resistors on the I2C lines 
+Gesture detection range of 4 to 8 inches (10 to 20 cm).
+
+
+check details and materials at: https://www.sparkfun.com/products/12787
+
+
+
+
+--------  USBtoUART cable  (given FTDI cable):
+******************************************
+Interface: UART
+
+Pin Out:
+Green  Wire: RTS (3.3V tolerance)
+Yellow Wire: RX Data Line (3.3V tolerance)
+Orange Wire: TX Data Line (3.3V tolerance)
+Red    Wire: 5V   
+Brown  Wire: CTS (3.3V tolerance)
+Black  Wire: Ground
+
+
+
+-------- USB 2.0 Web-Camera 
+———————-  Using the web camera - Hints
+
+Useful resources: 
+http://www.instructables.com/id/Galileo-Monochrome-Webcam-Display-System/?ALLSTEPS
+https://communities.intel.com/thread/54923  
+https://communities.intel.com/thread/56024
+http://i-am-gabi.github.io/take-a-picture-opencv-galileo  (useful for debugging your camera - in Pyhton (Python code is not acceptable as Lab3 deliverables )
+
+NOTE: You need to use modules such as OpenCV in order to handle the camera which is embedded in the new yocto image
+
+step 1. boot your yocto OS on your Galileo board 
+step 2. connect your given web camera to the USB Host port on the Galileo
+step 3. use ssh client via network or USB-to-Serial cable to manage your Galileo board
+step 4. check if your camera is connected to your Galileo board: browse to the "/dev" directory and type "ls" to see the device list of your board. You should see a device called "video0"
+step 5. develop your own .cpp or .c file or project in C/C++ language for taking pictures and video using the web camera and the given I2C Sensor device (Temperature or Gesture sensor) as the trigger for the camera. Be creative and make your own scenario to trigger your camera using the given sensor. 
+———————- 
+
+
+

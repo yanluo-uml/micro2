@@ -33,10 +33,10 @@ Connecting Galileo on Eduroam  wifi :  edit  “eduroam.config”  file applying
 
 ————————  Galileo Gen 2 : GPIO Configuration example: ———————————
 
-
+// setting all the appropriate I/O Expander such as MUX, Level Shifters, Pull-Up/Down resistors, etc.
 
 Set Strobe Signal Example:
-echo 40  > /sys/class/gpio/unexport      // unset the used GPIO port
+echo 40  > /sys/class/gpio/unexport                 // unset the used GPIO port
 
 
 set a GPIO:
@@ -55,6 +55,10 @@ system();
 
 C example:    sprintf(buffer, "echo \"%d\" >/sys/class/gpio/export", gpio);
 	      system(buffer);
+
+
+for explicit details check this guide: 
+    https://link.springer.com/chapter/10.1007%2F978-1-4302-6838-3_14
 
 
 
