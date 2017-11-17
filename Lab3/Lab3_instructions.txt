@@ -74,6 +74,7 @@ Black  Wire: Ground
 
 Useful resources: 
 http://www.instructables.com/id/Galileo-Monochrome-Webcam-Display-System/?ALLSTEPS
+http://www.cs.iit.edu/~agam/cs512/lect-notes/opencv-intro/opencv-intro.html
 https://communities.intel.com/thread/54923  
 https://communities.intel.com/thread/56024
 http://i-am-gabi.github.io/take-a-picture-opencv-galileo  (useful for debugging your camera - in Pyhton (Python code is not acceptable as Lab3 deliverables )

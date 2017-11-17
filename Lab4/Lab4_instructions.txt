@@ -1,0 +1,54 @@
+Lab 4 - Instructions:
+
+
+—————  Provided:  ——————————
+
+Server Side
+=====================================================================
+Server Hostname: ec2-54-202-113-131.us-west-2.compute.amazonaws.com
+Service Port   : 8000
+=====================================================================
+ 
+It is a HTTP server and handles POST requests. (you can use in your client side curl library to upload an image file or data to the HTTP server using POST method)
+Navigate and test the provided remote web-server by copy-pasting the following line to your browser: 
+
+ec2-54-202-113-131.us-west-2.compute.amazonaws.com:8000
+
+if the server works: you will see an empty data table in blue color showing “Group ID, Student Name , PIC ADC Value,PIC Status, Last Update (timestamp), Image file name” fields. If not,please check your internet connection otherwise contact with TA Ioannis Smanis
+
+
+————— Develop your own HTTP client to send the data to the server: ——————
+
+client.c 
+
+- Sample Code is given
+
+You should use the port 8000 to connect to the server and send your POST request.
+
+Study and Use curl library to implement your web requests.
+
+
+execution steps:
+
+   - step 1. : Compile your client.c application on your Galileo (remember you need to use curl library to develop the web client), compiling using the corresponding flags (link is provided in the lab4 description doc)
+   - step 2. : execute your application on the galileo, and check via your web-browser to see if the uploaded data showed up on the remote server
+
+— curl library uses the URL to send data to the server. Make sure you include this URL format to your POST request:  
+"http://servername_variable:portnumber_variable/update?id=var_xxxx&password=var_xxxx&name=var_xxxx&data=var_xxxx&status=var_xxxx&timestamp=var_xxxx&filename=var_xxxx" 
+
+
+
+—————  Develop your own threads in C ————
+
+Use POSIX Threads , use the given link or any other you find about POSIX
+
+
+
+-------- Compilation flags for face-detection 
+
+
+g++ `pkg-config --cflags opencv` filename.cpp `pkg-config --libs opencv` -o output_file_name
+
+
+If you get an error about "cannot find -lopencv_ts"  go to the related thread on Piazza "OpenCV help" and follow the steps to solve it
+
