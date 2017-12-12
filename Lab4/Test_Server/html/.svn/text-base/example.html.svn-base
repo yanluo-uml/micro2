@@ -1,0 +1,13 @@
+
+<link href="fashion.css" rel="stylesheet" type="text/css">
+Enter your group's credentials (as defined in authfile.py or given by Prof. Luo) and then press submit. Note the URL in the address bar while your browser is being redirected.
+<form action="update" method="GET">
+	<table>
+		<tr><td>Group ID:   </td><td><input type="text" name="id"      /></td></tr>
+		<tr><td>Password:   </td><td><input type="text" name="password"/></td></tr>
+		<tr><td>Group Name: </td><td><input type="text" name="name"    /></td></tr>
+		<tr><td>ADC Value:  </td><td><input type="text" name="data"    /></td></tr>
+		<tr><td>Status:     </td><td><input type="text" name="status"  /></td></tr>
+		<tr><td colspan="2"><input type="submit" /></td></tr>
+	</table>
+</form>
