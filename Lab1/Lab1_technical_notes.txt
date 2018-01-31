@@ -7,6 +7,10 @@ Make sure your power supply has a 3.3V output in order to supply your circuit  -
 
 Make sure you use(import) the given Lab1_MPLABXproject file to get started with the MPLAB X development environment - (MANDATORY)
 
+It is MANDATORY to use the LabReport_template to compose your own lab report in pdf form AND printed. Template Specs:(Font Size 12, Spacing Size 1, Font Helvetica , Given text boxes, answering all the listed sample questions)
+
+
+
 
 
 --- How to use an FTDI cable 
